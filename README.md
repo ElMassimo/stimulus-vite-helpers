@@ -18,9 +18,14 @@
 [stimulus handbook]: https://stimulus.hotwire.dev/handbook/installing
 [stimulus]: https://github.com/hotwired/stimulus
 [vite_rails]: https://vite-rails.netlify.app
+[vite-plugin-stimulus-hmr]: https://github.com/ElMassimo/vite-plugin-stimulus-hmr
 
 This plugin was extracted out of [Jumpstart Rails with Vite.js][jumpstart], a starter
 template that you can use to start your next Rails app.
+
+If you are looking for a simple way to integrate Vite.js in Rails, check out <kbd>[vite_rails]</kbd>.
+
+If you would like to enable HMR for your Stimulus controllers, check out <kbd>[vite-plugin-stimulus-hmr]</kbd>.
 
 ## Installation 💿
 
@@ -42,8 +47,6 @@ registerControllers(application, controllers)
 ```
 
 For more information, check the [Stimulus handbook].
-
-If you are looking for a simple way to integrate Vite.js in Rails, check out <kbd>[vite_rails]</kbd>.
 
 ## Special Thanks
 
