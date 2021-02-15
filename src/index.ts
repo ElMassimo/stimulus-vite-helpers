@@ -1,8 +1,6 @@
-/// <reference types="vite/client" />
-/// <reference types="stimulus" />
+import type { ImportedModules, Entry } from './types'
 
-type ImportedModules = ReturnType<ImportMeta['globEager']>
-type Entry<T> = { [K in keyof T]: [K, T[K]] }[keyof T]
+export const CONTROLLER_FILENAME_REGEX = /^(?:\.\/|.*?controllers\/)?(.+)(?:[_-]controller\..+?)$/
 
 export function registerControllers(application: Stimulus.Application, controllerModules: ImportedModules) {
   application.load(definitionsFromGlob(controllerModules))
@@ -21,7 +19,7 @@ function definitionFromEntry([name, controllerModule]: Entry<ImportedModules>) :
 }
 
 export function identifierForGlobKey(key: string): string | undefined {
-  const logicalName = (key.match(/^(?:\.\/)?(.+)(?:[_-]controller\..+?)$/) || [])[1]
+  const logicalName = (key.match(CONTROLLER_FILENAME_REGEX) || [])[1]
   if (logicalName) {
     return logicalName.replace(/_/g, "-").replace(/\//g, "--")
   }
