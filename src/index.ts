@@ -1,6 +1,6 @@
 import type { ImportedModules, Entry } from './types'
 
-export const CONTROLLER_FILENAME_REGEX = /^(?:\.\/|.*?controllers\/)?(.+)(?:[_-]controller\..+?)$/
+export const CONTROLLER_FILENAME_REGEX = /^(?:\.\/|.*?(?:controllers|components)\/)?(.+)(?:[_-]controller\..+?)$/
 
 export function registerControllers(application: Stimulus.Application, controllerModules: ImportedModules) {
   application.load(definitionsFromGlob(controllerModules))

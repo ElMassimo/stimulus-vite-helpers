@@ -1,6 +1,6 @@
 {
   "name": "stimulus-vite-helpers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vite.js helpers for the Stimulus JavaScript framework",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -19,7 +19,7 @@
     "dev": "npm run build -- --watch",
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "clean": "rm -rf ./dist",
-    "release": "nr clean && nr build && npm publish", 
+    "release": "nr clean && nr build && npm publish",
     "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
   },
   "files": ["dist"],
