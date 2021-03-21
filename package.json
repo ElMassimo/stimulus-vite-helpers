@@ -1,6 +1,6 @@
 {
   "name": "stimulus-vite-helpers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vite.js helpers for the Stimulus JavaScript framework",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,10 +9,19 @@
   "author": "Máximo Mussini <maximomussini@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ElMasssimo/stimulus-vite-helpers"
+    "url": "https://github.com/ElMassimo/stimulus-vite-helpers"
   },
-  "homepage": "https://github.com/ElMasssimo/stimulus-vite-helpers",
-  "bugs": "https://github.com/ElMasssimo/stimulus-vite-helpers/issues",
+  "homepage": "https://github.com/ElMassimo/stimulus-vite-helpers",
+  "bugs": "https://github.com/ElMassimo/stimulus-vite-helpers/issues",
+  "keywords": [
+    "stimulus",
+    "stimulusjs",
+    "rails",
+    "ruby",
+    "vite",
+    "vite-plugin",
+    "vitejs"
+  ],
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
@@ -20,6 +29,7 @@
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "clean": "rm -rf ./dist",
     "release": "nr clean && nr build && npm publish",
+    "prepublishOnly": "npm run build",
     "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
   },
   "files": ["dist"],
