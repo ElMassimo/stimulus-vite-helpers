@@ -3,6 +3,7 @@ import * as assert from 'uvu/assert'
 import { definitionsFromGlob } from '../dist/index.js'
 
 const mod = { default () { } }
+const controllerConstructor = mod.default
 const withoutDefaultExport = { }
 
 const modules = {
@@ -12,15 +13,17 @@ const modules = {
   './controllers/dashboard_controller.ts': mod,
   './controllers/fake_controller.ts': withoutDefaultExport,
   './image/reveal_controller.ts': mod,
+  '../image/blur_controller.ts': mod,
 }
 
 test('definitionsFromGlob', () => {
-  assert.is(definitionsFromGlob(modules), [
-    { identifier: 'home' },
-    { identifier: 'hello' },
-    { identifier: 'image--reveal' },
-    { identifier: 'dashboard' },
-    { identifier: 'image--reveal' },
+  assert.equal(definitionsFromGlob(modules), [
+    { identifier: 'home', controllerConstructor },
+    { identifier: 'hello', controllerConstructor },
+    { identifier: 'image--reveal', controllerConstructor },
+    { identifier: 'dashboard', controllerConstructor },
+    { identifier: 'image--reveal', controllerConstructor },
+    { identifier: 'image--blur', controllerConstructor },
   ])
 });
 
