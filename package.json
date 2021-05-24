@@ -1,6 +1,6 @@
 {
   "name": "stimulus-vite-helpers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vite.js helpers for the Stimulus JavaScript framework",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

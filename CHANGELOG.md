@@ -1,5 +1,9 @@
 [Stimulus HMR plugin]: https://github.com/ElMassimo/vite-plugin-stimulus-hmr
 
+## stimulus-vite-helpers 1.0.4 (2021-05-24)
+
+- Fix regexp to avoid namespacing controllers incorrectly (fix #1).
+
 ## stimulus-vite-helpers 1.0.3 (2021-03-21)
 
 - Add keywords and fix repo URL.
