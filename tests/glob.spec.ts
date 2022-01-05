@@ -1,6 +1,5 @@
-import { test } from 'uvu'
-import * as assert from 'uvu/assert'
-import { definitionsFromGlob } from '../dist/index.js'
+import { test, expect } from 'vitest'
+import { definitionsFromGlob } from 'stimulus-vite-helpers'
 
 const mod = { default () { } }
 const controllerConstructor = mod.default
@@ -17,7 +16,7 @@ const modules = {
 }
 
 test('definitionsFromGlob', () => {
-  assert.equal(definitionsFromGlob(modules), [
+  expect(definitionsFromGlob(modules)).toEqual([
     { identifier: 'home', controllerConstructor },
     { identifier: 'hello', controllerConstructor },
     { identifier: 'image--reveal', controllerConstructor },
@@ -25,6 +24,4 @@ test('definitionsFromGlob', () => {
     { identifier: 'image--reveal', controllerConstructor },
     { identifier: 'image--blur', controllerConstructor },
   ])
-});
-
-test.run()
+})

@@ -1,0 +1,7 @@
+{
+  "name": "stimulus-vite-helpers-tests",
+  "private": true,
+  "devDependencies": {
+    "stimulus-vite-helpers": "workspace:*"
+  }
+}

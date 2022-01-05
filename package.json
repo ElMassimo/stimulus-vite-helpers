@@ -1,13 +1,24 @@
 {
   "name": "stimulus-vite-helpers",
-  "version": "1.0.4",
+  "version": "3.0.0",
   "description": "Vite.js helpers for the Stimulus JavaScript framework",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "license": "MIT",
   "author": "Máximo Mussini <maximomussini@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ElMassimo/stimulus-vite-helpers"
@@ -25,28 +36,29 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "test": "uvu tests",
+    "test": "vitest",
     "dev": "npm run build -- --watch",
-    "build": "tsup src/index.ts --dts --format cjs,esm",
-    "clean": "rm -rf ./dist",
-    "release": "nr clean && nr build && npm publish",
+    "build": "tsup src/index.ts --dts --format cjs,esm --clean",
+    "release": "nr build && npm publish",
     "prepublishOnly": "npm run build",
     "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
   },
-  "files": [
-    "dist"
-  ],
   "devDependencies": {
-    "@antfu/eslint-config": "^0.4.3",
+    "@mussi/eslint-config": "^0.5",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "eslint": "^7.17.0",
-    "rollup": "^2.36.1",
+    "rollup": "^2.59",
     "standard-version": "^9.1.0",
-    "stimulus": "^2.0.0",
-    "tsup": "^3.11.0",
+    "@hotwired/stimulus": "^3.0.1",
+    "tsup": "^5",
     "typescript": "^4.1.3",
-    "uvu": "^0.5.1",
-    "vite": "^2.0.0-beta.69"
+    "vitest": "^0.0.132",
+    "vite": "^2.7"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@mussi/eslint-config"
+    ]
   },
   "publishConfig": {
     "access": "public"

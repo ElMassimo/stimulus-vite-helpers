@@ -1,4 +1,5 @@
 /.bundle
+.pnpm-debug.log
 pkg
 log
 tmp
