@@ -1,6 +1,6 @@
 {
   "name": "stimulus-vite-helpers",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Vite.js helpers for the Stimulus JavaScript framework",
   "license": "MIT",
   "author": "Máximo Mussini <maximomussini@gmail.com>",

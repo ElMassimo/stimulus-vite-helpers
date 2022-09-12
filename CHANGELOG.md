@@ -1,6 +1,6 @@
 [Stimulus HMR plugin]: https://github.com/ElMassimo/vite-plugin-stimulus-hmr
 
-## Unpublished
+## stimulus-vite-helpers 3.0.1 (2022-09-12)
 
 - Allow matching controllers without prefix in sidecar directories (fix #3).
 
