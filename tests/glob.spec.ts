@@ -7,6 +7,7 @@ const withoutDefaultExport = { }
 
 const modules = {
   '../components/home_controller.js': mod,
+  '../components/page/controller.js': mod,
   '../controllers/hello_controller.js': mod,
   '../controllers/image/reveal_controller.js': mod,
   './controllers/dashboard_controller.ts': mod,
@@ -18,6 +19,7 @@ const modules = {
 test('definitionsFromGlob', () => {
   expect(definitionsFromGlob(modules)).toEqual([
     { identifier: 'home', controllerConstructor },
+    { identifier: 'page', controllerConstructor },
     { identifier: 'hello', controllerConstructor },
     { identifier: 'image--reveal', controllerConstructor },
     { identifier: 'dashboard', controllerConstructor },
