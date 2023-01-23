@@ -21,5 +21,5 @@ function definitionFromEntry ([name, controllerModule]: Entry<ImportedModules>):
 export function identifierForGlobKey (key: string): string | undefined {
   const logicalName = (key.match(CONTROLLER_FILENAME_REGEX) || [])[1]
   if (logicalName)
-    return logicalName.replace(/[^\p{L}\p{N}]/gu, '-')
+    return logicalName.replace(/[^\p{L}\p{N}]+/gu, '-')
 }
