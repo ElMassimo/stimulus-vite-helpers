@@ -14,6 +14,7 @@ const modules = {
   './controllers/fake_controller.ts': withoutDefaultExport,
   './image/reveal_controller.ts': mod,
   '../image/blur_controller.ts': mod,
+  './views/users/orders/index_controller.ts': mod,
 }
 
 test('definitionsFromGlob', () => {
@@ -21,9 +22,10 @@ test('definitionsFromGlob', () => {
     { identifier: 'home', controllerConstructor },
     { identifier: 'page', controllerConstructor },
     { identifier: 'hello', controllerConstructor },
-    { identifier: 'image--reveal', controllerConstructor },
+    { identifier: 'image-reveal', controllerConstructor },
     { identifier: 'dashboard', controllerConstructor },
-    { identifier: 'image--reveal', controllerConstructor },
-    { identifier: 'image--blur', controllerConstructor },
+    { identifier: 'image-reveal', controllerConstructor },
+    { identifier: 'image-blur', controllerConstructor },
+    { identifier: 'users-orders-index', controllerConstructor }
   ])
 })
