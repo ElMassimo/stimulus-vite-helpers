@@ -46,6 +46,28 @@ const controllers = import.meta.globEager('./**/*_controller.js')
 registerControllers(application, controllers)
 ```
 
+If you are using controllers within `view_component` sidecar directories, the identifiers for these controllers might become lengthy and unclear
+```js
+// app/components/ui/button_component/button_component_controller.js
+
+//├ components
+//│ └ ui/
+//│   └ button_component/
+//│     └ button_component_controller.js
+
+//=> ui--button-component--button-component
+```
+
+Enabling the `{ nestedMode: true }` flag removes the duplicated part of the controller identifier
+```js
+registerControllers(application, controllers, { nestedMode: true });
+// default
+//=> ui--button-component--button-component
+
+// reduced
+//=> ui--button-component
+```
+
 For more information, check the [Stimulus handbook].
 
 ## Special Thanks

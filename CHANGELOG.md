@@ -1,5 +1,9 @@
 [Stimulus HMR plugin]: https://github.com/ElMassimo/vite-plugin-stimulus-hmr
 
+## stimulus-vite-helpers 3.0.2 (2023-08-17)
+
+- Add an optional parameter, { nestedMode: true }, to reduce controller identifier length.
+
 ## stimulus-vite-helpers 3.0.1 (2022-09-12)
 
 - Allow matching controllers without prefix in sidecar directories (fix #3).
