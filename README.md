@@ -13,7 +13,7 @@
 
 <br>
 
-[globEager]: https://vitejs.dev/guide/features.html#glob-import
+[import.meta.glob]: https://vitejs.dev/guide/features.html#glob-import
 [jumpstart]: https://github.com/ElMassimo/jumpstart-vite
 [stimulus handbook]: https://stimulus.hotwire.dev/handbook/installing
 [stimulus]: https://github.com/hotwired/stimulus
@@ -35,14 +35,14 @@ npx ni stimulus-vite-helpers
 
 ## Usage 🚀
 
-You can now register your Stimulus controllers using Vite's [globEager] and the `registerControllers` helper:
+You can now register your Stimulus controllers using Vite's [import.meta.glob] and the `registerControllers` helper:
 
 ```ts
 import { Application } from 'stimulus'
 import { registerControllers } from 'stimulus-vite-helpers'
 
 const application = Application.start()
-const controllers = import.meta.globEager('./**/*_controller.js')
+const controllers = import.meta.glob('./**/*_controller.js', { eager: true })
 registerControllers(application, controllers)
 ```
 
