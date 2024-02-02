@@ -13,7 +13,7 @@ export function definitionsFromGlob (controllerModules: ImportedModules): Defini
 
 function definitionFromEntry ([name, controllerModule]: Entry<ImportedModules>): Definition | undefined {
   const identifier = identifierForGlobKey(name)
-  const controllerConstructor = controllerModule.default
+  const controllerConstructor = (controllerModule as any).default ?? controllerModule
   if (identifier && typeof controllerConstructor === 'function')
     return { identifier, controllerConstructor }
 }

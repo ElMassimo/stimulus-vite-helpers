@@ -44,16 +44,16 @@
     "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
   },
   "devDependencies": {
-    "@mussi/eslint-config": "^0.5",
-    "@typescript-eslint/eslint-plugin": "^4.12.0",
-    "eslint": "^7.17.0",
-    "rollup": "^2.59",
-    "standard-version": "^9.1.0",
-    "@hotwired/stimulus": "^3.0.1",
-    "tsup": "^5",
-    "typescript": "^4.1.3",
-    "vitest": "^0.0.132",
-    "vite": "^2.7"
+    "@hotwired/stimulus": "^3.2.2",
+    "@mussi/eslint-config": "^0.5.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "eslint": "^7.32.0",
+    "rollup": "^4.9.6",
+    "standard-version": "^9.5.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.2"
   },
   "eslintConfig": {
     "extends": [
