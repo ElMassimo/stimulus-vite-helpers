@@ -46,7 +46,7 @@
   "devDependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@mussi/eslint-config": "^0.5.1",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "eslint": "^7.32.0",
     "rollup": "^4.9.6",
     "standard-version": "^9.5.0",
