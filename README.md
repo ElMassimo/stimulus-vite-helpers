@@ -38,7 +38,7 @@ npx ni stimulus-vite-helpers
 You can now register your Stimulus controllers using Vite's [import.meta.glob] and the `registerControllers` helper:
 
 ```ts
-import { Application } from 'stimulus'
+import { Application } from '@hotwired/stimulus'
 import { registerControllers } from 'stimulus-vite-helpers'
 
 const application = Application.start()
