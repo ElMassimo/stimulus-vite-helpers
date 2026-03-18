@@ -2,65 +2,48 @@
   "name": "stimulus-vite-helpers",
   "version": "3.1.0",
   "description": "Vite.js helpers for the Stimulus JavaScript framework",
-  "license": "MIT",
-  "author": "Máximo Mussini <maximomussini@gmail.com>",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ElMassimo/stimulus-vite-helpers"
-  },
-  "homepage": "https://github.com/ElMassimo/stimulus-vite-helpers",
-  "bugs": "https://github.com/ElMassimo/stimulus-vite-helpers/issues",
   "keywords": [
-    "stimulus",
-    "stimulusjs",
     "rails",
     "ruby",
+    "stimulus",
+    "stimulusjs",
     "vite",
     "vite-plugin",
     "vitejs"
   ],
-  "scripts": {
-    "lint": "eslint .",
-    "test": "vitest",
-    "dev": "npm run build -- --watch",
-    "build": "tsup src/index.ts --dts --format cjs,esm --clean",
-    "release": "nr build && npm publish",
-    "prepublishOnly": "npm run build",
-    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+  "homepage": "https://github.com/ElMassimo/stimulus-vite-helpers",
+  "bugs": "https://github.com/ElMassimo/stimulus-vite-helpers/issues",
+  "license": "MIT",
+  "author": "Máximo Mussini <maximomussini@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElMassimo/stimulus-vite-helpers"
   },
-  "devDependencies": {
-    "@hotwired/stimulus": "^3.2.2",
-    "@mussi/eslint-config": "^0.5.1",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "eslint": "^7.32.0",
-    "rollup": "^4.9.6",
-    "standard-version": "^9.5.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vitest": "^1.2.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@mussi/eslint-config"
-    ]
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "scripts": {
+    "lint": "vp lint",
+    "test": "vp test",
+    "dev": "vp pack --watch",
+    "build": "vp pack src/index.ts --dts",
+    "check": "vp check",
+    "release": "vp pack src/index.ts --dts && npm publish",
+    "prepublishOnly": "vp pack src/index.ts --dts",
+    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags"
+  },
+  "peerDependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "vite": "^8"
+  },
+  "packageManager": "pnpm@10.32.1"
 }

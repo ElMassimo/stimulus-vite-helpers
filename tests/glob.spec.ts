@@ -1,5 +1,5 @@
-import { test, expect } from 'vitest'
 import { definitionsFromGlob } from 'stimulus-vite-helpers'
+import { expect, test } from 'vite-plus/test'
 
 const mod = { default () { } }
 const controllerConstructor = mod.default
